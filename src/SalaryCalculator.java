@@ -7,7 +7,8 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JTextField;
 
-public class SalaryCalculator {
+public class SalaryCalculator
+{
 
 	public static void main(String[] args) 
 	{
@@ -18,12 +19,12 @@ public class SalaryCalculator {
 		JLabel hourlyRate = new JLabel("Hourly Rate: ");
 		hourlyRate.setBounds(25,25,125,25);
 		myFrame.add(hourlyRate);
-		String hrRate = hourlyRate.getText();
+		
 		
 		JLabel hoursWeek = new JLabel("Hours/Week: ");
 		hoursWeek.setBounds(25,50,125,25);
 		myFrame.add(hoursWeek);
-		String hrWeek = hoursWeek.getText();
+		
 		
 		JTextField ans1 = new JTextField();
 		ans1.setBounds(100,25,125,25);
@@ -48,7 +49,9 @@ public class SalaryCalculator {
 				{
 					public void actionPerformed(ActionEvent e)
 					{
-						boolean isClicked = fullTime.isEnabled();
+						String hrRate = ans1.getText();
+						String hrWeek = ans2.getText();
+						boolean isClicked = fullTime.isSelected();
 						if(isClicked)
 						{
 							double calc = 40*52*(Double.parseDouble(hrRate));
@@ -65,6 +68,7 @@ public class SalaryCalculator {
 							answer.setBounds(250,100,125,25);
 							myFrame.add(answer);
 						}
+						myFrame.repaint();
 					}
 				});
 		
