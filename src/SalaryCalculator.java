@@ -18,12 +18,12 @@ public class SalaryCalculator {
 		JLabel hourlyRate = new JLabel("Hourly Rate: ");
 		hourlyRate.setBounds(25,25,125,25);
 		myFrame.add(hourlyRate);
-		String hrRate = hourlyRate.getText().toString();
+		String hrRate = hourlyRate.getText();
 		
 		JLabel hoursWeek = new JLabel("Hours/Week: ");
 		hoursWeek.setBounds(25,50,125,25);
 		myFrame.add(hoursWeek);
-		String hrWeek = hoursWeek.getText().toString();
+		String hrWeek = hoursWeek.getText();
 		
 		JTextField ans1 = new JTextField();
 		ans1.setBounds(100,25,125,25);
@@ -51,7 +51,19 @@ public class SalaryCalculator {
 						boolean isClicked = fullTime.isEnabled();
 						if(isClicked)
 						{
-							
+							double calc = 40*52*(Double.parseDouble(hrRate));
+							String ans = "" + calc;
+							JLabel answer = new JLabel(ans);
+							answer.setBounds(250,100,125,25);
+							myFrame.add(answer);
+						}
+						else if(!isClicked)
+						{
+							double calc = 52*(Double.parseDouble(hrRate)*(Double.parseDouble(hrWeek)));
+							String ans = "" + calc;
+							JLabel answer = new JLabel(ans);
+							answer.setBounds(250,100,125,25);
+							myFrame.add(answer);
 						}
 					}
 				});
