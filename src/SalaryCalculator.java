@@ -59,7 +59,7 @@ public class SalaryCalculator {
 						}
 						else if(!isClicked)
 						{
-							double calc = 52*(Double.parseDouble(hrRate)*(Double.parseDouble(hrWeek)));
+							double calc = 52*(Double.parseDouble(hrRate))*(Double.parseDouble(hrWeek));
 							String ans = "" + calc;
 							JLabel answer = new JLabel(ans);
 							answer.setBounds(250,100,125,25);
